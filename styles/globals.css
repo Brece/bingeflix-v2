@@ -2,19 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
+/* html, body, heading */
+@layer base {
+	body {
+		@apply bg-[#141414];
+	}
+}
+
+/* custom class names */
+@layer components {
+	.headerLink {
+		@apply cursor-pointer text-sm font-light text-[#e5e5e5] transition duration-[.4s] hover:text-[#b3b3b3];
+	}
+}
 html,
 body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+	padding: 0;
+	margin: 0;
+	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+		Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
-
 a {
-  color: inherit;
-  text-decoration: none;
+	color: inherit;
+	text-decoration: none;
 }
-
 * {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
