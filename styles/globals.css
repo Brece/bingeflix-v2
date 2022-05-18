@@ -6,6 +6,10 @@
 @layer base {
 	body {
 		@apply bg-[#141414];
+		@apply text-[#ffffff]
+	}
+	header {
+		@apply fixed top-0 z-50 flex items-center justify-between w-full px-4 py-4 transition-all lg:px-10 lg:py-6
 	}
 }
 
