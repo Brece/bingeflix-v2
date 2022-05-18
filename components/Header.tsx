@@ -3,7 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 
-export default function Header () {
+const Header = () => {
     const [isScrolled, setIsScrolled] = useState(false);
 
     const handleScroll = () => {
@@ -61,3 +61,5 @@ export default function Header () {
         </header>
     )
 }
+
+export default Header;
