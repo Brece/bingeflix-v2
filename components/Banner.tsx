@@ -18,9 +18,6 @@ function Banner ({ netflixOriginals }: PropsInterface) {
         );
     }, [netflixOriginals]);
 
-    console.log(movie);
-    console.log(`${baseUrl}${movie?.backdrop_path || movie?.poster_path}`);
-
     return (
         <div className='flex flex-col space-y-2 py-16 md:space-y-4 lg:h-[65vh] lg:justify-end lg:pb-12'>
             <div className='absolute top-0 left-0 -z-10 w-screen h-[95vh]'>
@@ -41,7 +38,7 @@ function Banner ({ netflixOriginals }: PropsInterface) {
 
             <div className='flex space-x-3'>
                 <button className='bannerBtn bg-white text-black'>
-                    <FaPlay className='w-4 h-4 text-black md:h-7 md:w-7' />
+                    <FaPlay className='w-4 h-4 text-primary md:h-7 md:w-7' />
                     Play
                 </button>
                 <button className='bannerBtn bg-[gray]/70'>
