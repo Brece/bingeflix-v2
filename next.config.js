@@ -5,6 +5,9 @@ const nextConfig = {
     images: {
       layoutRaw: true,
     }
+  },
+  images: {
+    domains: ['image.tmdb.org'],
   }
 }
 
