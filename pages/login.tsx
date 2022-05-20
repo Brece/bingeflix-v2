@@ -1,13 +1,16 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import { useState } from 'react';
+import { useForm } from 'react-hook-form';
 
 function Login () {
     const [login, setLogin] = useState<boolean>(false);
-    
-    const onSubmit = () => {
+    const { register, handleSubmit, watch, formState: { errors } } = useFormm();
+    const onSubmit = (data) => console.log(data);
 
-    }
+    // const onSubmit = () => {
+
+    // }
 
     return (
         <div className='relative flex flex-col w-screen h-screen bg-black md:items-center md:justify-center md:bg-transparent'>
