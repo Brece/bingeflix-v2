@@ -5,6 +5,7 @@ import Row from '../components/Row';
 import requests from '../utils/request';
 import { MovieInterface } from '../typings';
 import { listenerCount } from 'process';
+import useAuth from '../hooks/useAuth';
 
 interface PropsInterface {
 	netflixOriginals: MovieInterface[],
@@ -28,6 +29,10 @@ function Home ({
 	romanceMovies,
 	documentaries,
 	}: PropsInterface) {
+	const { logout, loading } = useAuth();
+
+	if(loading) return null;
+	
 	return (
 		<div className='relative h-screen bg-gradient-to-b lg:h-[140vh]'>
 			<Head>
