@@ -6,6 +6,9 @@ import requests from '../utils/request';
 import { MovieInterface } from '../typings';
 import { listenerCount } from 'process';
 import useAuth from '../hooks/useAuth';
+import { useRecoilValue } from 'recoil';
+import { modalState } from '../atoms/modalAtom';
+import Modal from '../components/Modal';
 
 interface PropsInterface {
 	netflixOriginals: MovieInterface[],
@@ -30,6 +33,7 @@ function Home ({
 	documentaries,
 	}: PropsInterface) {
 	const { logout, loading } = useAuth();
+	const showModal = useRecoilValue(modalState);
 
 	if(loading) return null;
 	
@@ -58,7 +62,8 @@ function Home ({
 					<Row title='Documentaries' movies={documentaries} />
 				</section>
 			</main>
-			{/* modal */}
+			
+			{showModal && <Modal />}
 		</div>
 	)
 }
