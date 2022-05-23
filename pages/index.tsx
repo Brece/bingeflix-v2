@@ -34,8 +34,12 @@ function Home ({
 	}: PropsInterface) {
 	const { logout, loading } = useAuth();
 	const showModal = useRecoilValue(modalState);
+	const subscribtion = false
 
-	if(loading) return null;
+	if (loading || subscribtion === null) return null;
+
+	// placeholder for payment plans through 'Stripe', Firebase refuses payment options for upgrade to 'Blaze Plan' that is necesssary to integrate Stripe payment
+	// if (!subscribtion) return <div>Plans</div>;
 	
 	return (
 		<div className={`relative h-screen bg-gradient-to-b lg:h-[140vh] ${showModal && '!h-screen overflow-hidden'}`}>
